@@ -13,8 +13,7 @@ export default function HeroSection() {
         <nav className="absolute top-0 left-0 right-0 z-50 p-6">
           <div className="max-w-7xl mx-auto flex justify-between items-center">
             <div className="text-white font-bold text-2xl">
-              <i className="fas fa-paper-plane mr-2"></i>
-              TravelAI
+              ✈️ TravelAI
             </div>
             <div className="hidden md:flex space-x-6 text-white">
               <a href="#" className="hover:text-secondary transition-colors">How it works</a>
@@ -33,11 +32,11 @@ export default function HeroSection() {
         {/* Hero Content */}
         <div className="text-center text-white px-6 max-w-4xl mx-auto relative z-10">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-            Your Perfect Trip,
-            <span className="text-secondary"> Planned by AI</span>
+            Your Perfect Trip 🌍,
+            <span className="text-secondary"> Planned by AI ✨</span>
           </h1>
           <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
-            Get personalized, real-time travel itineraries that blend your preferences with live flight, hotel, and weather data.
+            Get personalized, real-time travel itineraries that blend your preferences with live flight ✈️, hotel 🏨, and weather 🌤️ data.
           </p>
           <button 
             className="bg-white text-primary px-8 py-4 rounded-full font-semibold text-lg hover:bg-secondary hover:text-secondary-foreground transition-all transform hover:scale-105 shadow-2xl"
@@ -47,8 +46,7 @@ export default function HeroSection() {
               planningSection?.scrollIntoView({ behavior: 'smooth' });
             }}
           >
-            <i className="fas fa-magic mr-2"></i>
-            Start Planning Now
+            🎯 Start Planning Now
           </button>
         </div>
       </div>

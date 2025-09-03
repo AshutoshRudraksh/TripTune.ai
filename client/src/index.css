@@ -4,35 +4,35 @@
 @tailwind utilities;
 
 :root {
-  --background: hsl(231, 20%, 12%);
+  --background: hsl(250, 50%, 15%);
   --foreground: hsl(0, 0%, 98%);
-  --card: hsl(230, 25%, 18%);
-  --card-foreground: hsl(0, 0%, 95%);
-  --popover: hsl(230, 25%, 18%);
-  --popover-foreground: hsl(0, 0%, 95%);
+  --card: hsl(260, 40%, 25%);
+  --card-foreground: hsl(0, 0%, 98%);
+  --popover: hsl(260, 40%, 25%);
+  --popover-foreground: hsl(0, 0%, 98%);
   --primary: hsl(280, 100%, 70%);
   --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(340, 100%, 65%);
   --secondary-foreground: hsl(0, 0%, 100%);
-  --muted: hsl(231, 15%, 20%);
-  --muted-foreground: hsl(0, 0%, 65%);
+  --muted: hsl(250, 30%, 35%);
+  --muted-foreground: hsl(0, 0%, 90%);
   --accent: hsl(45, 100%, 60%);
   --accent-foreground: hsl(0, 0%, 10%);
   --destructive: hsl(0, 84%, 60%);
   --destructive-foreground: hsl(0, 0%, 100%);
-  --border: hsl(231, 15%, 25%);
-  --input: hsl(231, 15%, 22%);
+  --border: hsl(260, 30%, 40%);
+  --input: hsl(260, 30%, 30%);
   --ring: hsl(280, 100%, 70%);
   --radius: 12px;
   --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
   
-  --sidebar: hsl(230, 25%, 18%);
-  --sidebar-foreground: hsl(0, 0%, 95%);
+  --sidebar: hsl(260, 40%, 25%);
+  --sidebar-foreground: hsl(0, 0%, 98%);
   --sidebar-primary: hsl(280, 100%, 70%);
   --sidebar-primary-foreground: hsl(0, 0%, 100%);
-  --sidebar-accent: hsl(231, 15%, 20%);
+  --sidebar-accent: hsl(250, 30%, 35%);
   --sidebar-accent-foreground: hsl(280, 100%, 70%);
-  --sidebar-border: hsl(231, 15%, 25%);
+  --sidebar-border: hsl(260, 30%, 40%);
   --sidebar-ring: hsl(280, 100%, 70%);
 }
 

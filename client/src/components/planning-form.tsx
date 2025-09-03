@@ -17,14 +17,14 @@ interface PlanningFormProps {
 }
 
 const interests = [
-  { id: "photography", name: "Photography", icon: "fa-camera" },
-  { id: "food", name: "Food & Drink", icon: "fa-utensils" },
-  { id: "history", name: "History", icon: "fa-landmark" },
-  { id: "adventure", name: "Adventure", icon: "fa-hiking" },
-  { id: "shopping", name: "Shopping", icon: "fa-shopping-bag" },
-  { id: "relaxation", name: "Relaxation", icon: "fa-spa" },
-  { id: "nightlife", name: "Nightlife", icon: "fa-music" },
-  { id: "nature", name: "Nature", icon: "fa-tree" },
+  { id: "photography", name: "Photography", icon: "📸" },
+  { id: "food", name: "Food & Drink", icon: "🍽️" },
+  { id: "history", name: "History", icon: "🏛️" },
+  { id: "adventure", name: "Adventure", icon: "🏔️" },
+  { id: "shopping", name: "Shopping", icon: "🛍️" },
+  { id: "relaxation", name: "Relaxation", icon: "🧘" },
+  { id: "nightlife", name: "Nightlife", icon: "🎵" },
+  { id: "nature", name: "Nature", icon: "🌲" },
 ];
 
 export default function PlanningForm({ onGenerationStart, onItineraryGenerated }: PlanningFormProps) {
@@ -70,6 +70,158 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
     generateItineraryMutation.mutate(requestWithInterests);
   };
 
+  const handleTryDemo = () => {
+    const demoRequest: TripRequest = {
+      destination: "Bali, Indonesia",
+      startDate: "2024-03-15",
+      endDate: "2024-03-20",
+      interests: ["photography", "food", "relaxation", "nature"],
+      budget: "mid-range",
+      pace: "moderate"
+    };
+    
+    // Fill the form with demo data
+    form.setValue("destination", demoRequest.destination);
+    form.setValue("startDate", demoRequest.startDate);
+    form.setValue("endDate", demoRequest.endDate);
+    form.setValue("budget", demoRequest.budget);
+    form.setValue("pace", demoRequest.pace);
+    setSelectedInterests(demoRequest.interests);
+    
+    // Create a demo itinerary directly without API call
+    const demoItinerary: Itinerary = {
+      id: "demo-bali-trip",
+      title: "5 Days in Bali, Indonesia",
+      destination: "Bali, Indonesia",
+      startDate: "2024-03-15",
+      endDate: "2024-03-20",
+      interests: ["photography", "food", "relaxation", "nature"],
+      budget: "mid-range",
+      pace: "moderate",
+      totalCost: "$1,250",
+      createdAt: new Date(),
+      days: [
+        {
+          day: 1,
+          date: "2024-03-15",
+          title: "Arrival & Ubud Exploration",
+          weather: { condition: "Sunny", temperature: "84°F", icon: "☀️" },
+          timeBlocks: [
+            {
+              time: "9:00 AM",
+              period: "morning",
+              activity: {
+                name: "Sacred Monkey Forest Sanctuary",
+                description: "Explore the mystical forest sanctuary with playful monkeys and ancient temples",
+                duration: "2 hours",
+                cost: "$15",
+                location: { lat: -8.5211, lng: 115.2581, address: "Monkey Forest Rd, Ubud" }
+              }
+            },
+            {
+              time: "2:00 PM", 
+              period: "afternoon",
+              activity: {
+                name: "Tegallalang Rice Terraces",
+                description: "Photography session at the stunning terraced rice fields with panoramic views",
+                duration: "3 hours",
+                cost: "$25",
+                location: { lat: -8.4393, lng: 115.2796, address: "Tegallalang, Gianyar" }
+              }
+            },
+            {
+              time: "7:00 PM",
+              period: "evening", 
+              activity: {
+                name: "Balinese Cooking Class",
+                description: "Learn traditional Balinese cuisine with local spices and authentic techniques",
+                duration: "3 hours",
+                cost: "$65",
+                location: { lat: -8.5069, lng: 115.2624, address: "Jl. Monkey Forest Rd, Ubud" }
+              }
+            }
+          ],
+          totalCost: 105,
+          walkingDistance: "2.1 miles"
+        },
+        {
+          day: 2,
+          date: "2024-03-16", 
+          title: "Temple Hopping & Cultural Immersion",
+          weather: { condition: "Partly Cloudy", temperature: "82°F", icon: "⛅" },
+          timeBlocks: [
+            {
+              time: "8:00 AM",
+              period: "morning",
+              activity: {
+                name: "Tanah Lot Temple",
+                description: "Visit the iconic sea temple perched on a rock formation during golden hour",
+                duration: "2.5 hours", 
+                cost: "$20",
+                location: { lat: -8.6211, lng: 115.0864, address: "Tanah Lot, Tabanan" }
+              }
+            },
+            {
+              time: "1:30 PM",
+              period: "afternoon",
+              activity: {
+                name: "Balinese Silver Workshop",
+                description: "Watch skilled artisans create intricate silver jewelry and try your hand at crafting",
+                duration: "2 hours",
+                cost: "$40", 
+                location: { lat: -8.5391, lng: 115.2664, address: "Celuk Village, Gianyar" }
+              }
+            },
+            {
+              time: "6:30 PM",
+              period: "evening",
+              activity: {
+                name: "Traditional Kecak Fire Dance",
+                description: "Experience the mesmerizing trance dance performance with fire and chanting",
+                duration: "2 hours",
+                cost: "$30",
+                location: { lat: -8.5156, lng: 115.2623, address: "Ubud Palace, Ubud" }
+              }
+            }
+          ],
+          totalCost: 90,
+          walkingDistance: "1.8 miles"
+        }
+      ],
+      flightData: [
+        {
+          airline: "Garuda Indonesia",
+          route: "LAX → DPS",
+          price: "$650",
+          duration: "18h 45m",
+          departure: "2024-03-14",
+          arrival: "2024-03-15"
+        }
+      ],
+      hotelData: [
+        {
+          name: "Hanging Gardens of Bali",
+          rating: 4.8,
+          price: "$280/night",
+          location: "Ubud",
+          amenities: ["Infinity Pool", "Spa", "Restaurant", "WiFi"]
+        }
+      ],
+      weatherData: [
+        {
+          date: "2024-03-15",
+          condition: "Sunny",
+          temperature: "84°F", 
+          humidity: "65%",
+          icon: "☀️"
+        }
+      ]
+    };
+    
+    onGenerationStart(demoRequest);
+    onItineraryGenerated(demoItinerary);
+  };
+
   const toggleInterest = (interestId: string) => {
     setSelectedInterests(prev => 
       prev.includes(interestId) 
@@ -82,8 +234,20 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
     <section id="planning-form" className="py-20 bg-background relative">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Tell Us About Your Dream Trip</h2>
-          <p className="text-xl text-muted-foreground">We'll use AI to create the perfect itinerary for you</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4">Tell Us About Your Dream Trip 🌟</h2>
+          <p className="text-xl text-muted-foreground">We'll use AI to create the perfect itinerary for you ✨</p>
+          
+          <div className="mt-6">
+            <Button
+              onClick={handleTryDemo}
+              variant="outline"
+              className="bg-accent/10 text-accent border-accent/30 hover:bg-accent/20 hover:border-accent/50 transition-all"
+              disabled={generateItineraryMutation.isPending}
+              data-testid="button-try-demo"
+            >
+              🎯 Try Demo: 5 Days in Bali
+            </Button>
+          </div>
         </div>
         
         <Card className="rounded-2xl shadow-2xl p-8 border border-border">
@@ -92,8 +256,7 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <Label className="block text-sm font-medium text-foreground mb-2">
-                  <i className="fas fa-map-marker-alt text-primary mr-2"></i>
-                  Destination
+                  📍 Destination
                 </Label>
                 <Input
                   {...form.register("destination")}
@@ -108,8 +271,7 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <Label className="block text-sm font-medium text-foreground mb-2">
-                    <i className="fas fa-calendar text-primary mr-2"></i>
-                    Start Date
+                    📅 Start Date
                   </Label>
                   <Input
                     {...form.register("startDate")}
@@ -123,7 +285,7 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
                 </div>
                 <div>
                   <Label className="block text-sm font-medium text-foreground mb-2">
-                    End Date
+                    📅 End Date
                   </Label>
                   <Input
                     {...form.register("endDate")}
@@ -141,8 +303,7 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
             {/* Interests */}
             <div>
               <Label className="block text-sm font-medium text-foreground mb-4">
-                <i className="fas fa-heart text-primary mr-2"></i>
-                What are you interested in?
+                💝 What are you interested in?
               </Label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
                 {interests.map((interest) => (
@@ -158,8 +319,7 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
                     onClick={() => toggleInterest(interest.id)}
                     data-testid={`button-interest-${interest.id}`}
                   >
-                    <i className={`fas ${interest.icon} mr-2 text-primary`}></i>
-                    {interest.name}
+                    {interest.icon} {interest.name}
                   </Button>
                 ))}
               </div>
@@ -172,8 +332,7 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
             <div className="grid md:grid-cols-2 gap-6">
               <div>
                 <Label className="block text-sm font-medium text-foreground mb-4">
-                  <i className="fas fa-dollar-sign text-primary mr-2"></i>
-                  Budget Range
+                  💰 Budget Range
                 </Label>
                 <RadioGroup
                   defaultValue="mid-range"
@@ -196,8 +355,7 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
               </div>
               <div>
                 <Label className="block text-sm font-medium text-foreground mb-4">
-                  <i className="fas fa-clock text-primary mr-2"></i>
-                  Travel Pace
+                  ⏰ Travel Pace
                 </Label>
                 <RadioGroup
                   defaultValue="moderate"
@@ -228,8 +386,7 @@ export default function PlanningForm({ onGenerationStart, onItineraryGenerated }
                 disabled={generateItineraryMutation.isPending}
                 data-testid="button-generate-itinerary"
               >
-                <i className="fas fa-wand-magic-sparkles mr-2"></i>
-                {generateItineraryMutation.isPending ? "Generating..." : "Generate My Itinerary"}
+                🪄 {generateItineraryMutation.isPending ? "Generating..." : "Generate My Itinerary"}
               </Button>
             </div>
           </form>

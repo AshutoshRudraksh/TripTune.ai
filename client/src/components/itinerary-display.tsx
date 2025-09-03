@@ -104,8 +104,8 @@ export default function ItineraryDisplay({ itinerary, onItineraryUpdate }: Itine
     <section className="py-20 bg-background">
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Your Personalized Itinerary</h2>
-          <p className="text-xl text-muted-foreground">AI-generated plan based on your preferences and live data</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4">🗺️ Your Personalized Itinerary</h2>
+          <p className="text-xl text-muted-foreground">AI-generated plan based on your preferences and live data ✨</p>
         </div>
         
         {/* Itinerary Header */}
@@ -125,21 +125,21 @@ export default function ItineraryDisplay({ itinerary, onItineraryUpdate }: Itine
                 className="bg-primary text-primary-foreground hover:bg-primary/90"
                 data-testid="button-save-itinerary"
               >
-                <i className="fas fa-save mr-2"></i>Save
+                💾 Save
               </Button>
               <Button
                 onClick={handleExportPDF}
                 className="bg-secondary text-secondary-foreground hover:bg-secondary/90"
                 data-testid="button-export-pdf"
               >
-                <i className="fas fa-download mr-2"></i>Export
+                📄 Export
               </Button>
               <Button
                 onClick={handleShareItinerary}
                 className="bg-accent text-accent-foreground hover:bg-accent/90"
                 data-testid="button-share-itinerary"
               >
-                <i className="fas fa-share mr-2"></i>Share
+                🔗 Share
               </Button>
             </div>
           </div>
@@ -232,7 +232,7 @@ export default function ItineraryDisplay({ itinerary, onItineraryUpdate }: Itine
         
         {/* Trip Summary */}
         <Card className="rounded-2xl shadow-lg p-6 border border-border">
-          <h4 className="text-xl font-semibold text-card-foreground mb-4">Trip Summary</h4>
+          <h4 className="text-xl font-semibold text-card-foreground mb-4">📊 Trip Summary</h4>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="text-center">
               <div className="text-3xl font-bold text-primary mb-2" data-testid="text-total-cost">
@@ -259,8 +259,7 @@ export default function ItineraryDisplay({ itinerary, onItineraryUpdate }: Itine
           
           <div className="mt-6 p-4 bg-muted/30 rounded-lg">
             <h5 className="font-medium mb-2 text-card-foreground">
-              <i className="fas fa-lightbulb text-accent mr-2"></i>
-              AI Travel Tips
+              💡 AI Travel Tips
             </h5>
             <ul className="text-sm text-muted-foreground space-y-1">
               <li>• Pack layers - temperatures may vary throughout the day</li>

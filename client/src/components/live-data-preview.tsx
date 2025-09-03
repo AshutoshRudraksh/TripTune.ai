@@ -67,20 +67,20 @@ export default function LiveDataPreview({ request }: LiveDataPreviewProps) {
     <section className="py-20 bg-muted/30">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold text-foreground mb-4">Real-Time Travel Intelligence</h2>
-          <p className="text-xl text-muted-foreground">Live data integration for the best travel decisions</p>
+          <h2 className="text-4xl font-bold text-foreground mb-4">🚀 Real-Time Travel Intelligence</h2>
+          <p className="text-xl text-muted-foreground">Live data integration for the best travel decisions ✨</p>
         </div>
         
         <div className="grid md:grid-cols-3 gap-8">
           {/* Flights Card */}
           <Card className="rounded-2xl shadow-lg p-6 border border-border hover:shadow-xl transition-shadow">
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4">
-                <i className="fas fa-plane text-primary text-xl"></i>
+              <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 text-2xl">
+                ✈️
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-card-foreground">Flight Options</h3>
-                <p className="text-muted-foreground text-sm">Live pricing & schedules</p>
+                <p className="text-muted-foreground text-sm">Live pricing & schedules 📊</p>
               </div>
             </div>
             
@@ -108,12 +108,12 @@ export default function LiveDataPreview({ request }: LiveDataPreviewProps) {
           {/* Hotels Card */}
           <Card className="rounded-2xl shadow-lg p-6 border border-border hover:shadow-xl transition-shadow">
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4">
-                <i className="fas fa-hotel text-accent text-xl"></i>
+              <div className="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center mr-4 text-2xl">
+                🏨
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-card-foreground">Top Hotels</h3>
-                <p className="text-muted-foreground text-sm">Best rated & located</p>
+                <p className="text-muted-foreground text-sm">Best rated & located 🌟</p>
               </div>
             </div>
             
@@ -153,12 +153,12 @@ export default function LiveDataPreview({ request }: LiveDataPreviewProps) {
           {/* Weather Card */}
           <Card className="rounded-2xl shadow-lg p-6 border border-border hover:shadow-xl transition-shadow">
             <div className="flex items-center mb-4">
-              <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4">
-                <i className="fas fa-cloud-sun text-secondary text-xl"></i>
+              <div className="w-12 h-12 bg-secondary/20 rounded-full flex items-center justify-center mr-4 text-2xl">
+                🌤️
               </div>
               <div>
                 <h3 className="font-semibold text-lg text-card-foreground">Weather Forecast</h3>
-                <p className="text-muted-foreground text-sm">7-day outlook</p>
+                <p className="text-muted-foreground text-sm">7-day outlook 📅</p>
               </div>
             </div>
             

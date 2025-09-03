@@ -11,10 +11,10 @@ export default function LoadingModal({ isOpen, onClose }: LoadingModalProps) {
   const [currentStep, setCurrentStep] = useState(0);
 
   const steps = [
-    { label: "Searching flights...", icon: "fa-plane", completed: false },
-    { label: "Finding best hotels...", icon: "fa-hotel", completed: false },
-    { label: "Checking weather forecasts...", icon: "fa-cloud-sun", completed: false },
-    { label: "Generating personalized itinerary...", icon: "fa-magic", completed: false },
+    { label: "Searching flights... ✈️", icon: "fa-plane", completed: false },
+    { label: "Finding best hotels... 🏨", icon: "fa-hotel", completed: false },
+    { label: "Checking weather forecasts... 🌤️", icon: "fa-cloud-sun", completed: false },
+    { label: "Generating personalized itinerary... ✨", icon: "fa-magic", completed: false },
   ];
 
   useEffect(() => {
@@ -47,11 +47,11 @@ export default function LoadingModal({ isOpen, onClose }: LoadingModalProps) {
       <DialogContent className="max-w-md" data-testid="modal-loading">
         <div className="text-center p-6">
           <div className="mb-6">
-            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-              <i className="fas fa-plane text-primary text-2xl loading-plane"></i>
+            <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">
+              ✈️
             </div>
-            <h3 className="text-xl font-semibold text-card-foreground mb-2">Creating Your Perfect Trip</h3>
-            <p className="text-muted-foreground">AI is analyzing thousands of options...</p>
+            <h3 className="text-xl font-semibold text-card-foreground mb-2">Creating Your Perfect Trip ✨</h3>
+            <p className="text-muted-foreground">AI is analyzing thousands of options 🔍...</p>
           </div>
           
           <div className="space-y-4">
@@ -65,7 +65,7 @@ export default function LoadingModal({ isOpen, onClose }: LoadingModalProps) {
                       : 'bg-muted'
                 }`}>
                   {index < currentStep ? (
-                    <i className="fas fa-check text-white text-xs"></i>
+                    <span className="text-white text-xs">✓</span>
                   ) : index === currentStep ? (
                     <div className="w-2 h-2 bg-white rounded-full animate-spin"></div>
                   ) : null}
@@ -76,7 +76,7 @@ export default function LoadingModal({ isOpen, onClose }: LoadingModalProps) {
                   {step.label}
                 </span>
                 {index < currentStep && (
-                  <i className="fas fa-check text-green-500 ml-auto"></i>
+                  <span className="text-green-500 ml-auto">✓</span>
                 )}
                 {index === currentStep && (
                   <div className="w-4 h-4 border-2 border-primary border-t-transparent rounded-full animate-spin ml-auto"></div>
