@@ -6,7 +6,7 @@ import LoadingModal from "@/components/loading-modal";
 import { useState } from "react";
 import type { Itinerary, TripRequest } from "@shared/schema";
 
-export default function Home() {
+export default function Landing() {
   const [currentItinerary, setCurrentItinerary] = useState<Itinerary | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
   const [currentRequest, setCurrentRequest] = useState<TripRequest | null>(null);
@@ -23,32 +23,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Navigation for authenticated users */}
-      <nav className="bg-card border-b border-border py-4">
-        <div className="max-w-6xl mx-auto px-6 flex justify-between items-center">
-          <div className="text-2xl font-bold text-foreground">✈️ TravelAI</div>
-          <div className="flex items-center space-x-6">
-            <a href="/" className="text-primary font-medium">Home</a>
-            <a href="/examples" className="text-muted-foreground hover:text-primary transition-colors">Examples</a>
-            <a href="/pricing" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a>
-            <a href="/api/logout" className="bg-destructive text-destructive-foreground px-4 py-2 rounded-lg hover:bg-destructive/90 transition-all">
-              🚪 Sign Out
-            </a>
-          </div>
-        </div>
-      </nav>
-      
-      {/* Hero Section for authenticated users */}
-      <section className="travel-gradient py-20">
-        <div className="text-center text-white px-6 max-w-4xl mx-auto">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-            Welcome Back! ✨
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 opacity-90 leading-relaxed">
-            Ready to plan your next adventure? 🌍
-          </p>
-        </div>
-      </section>
+      <HeroSection />
       
       {/* Popular Destinations Section */}
       <section className="py-20 bg-muted/20">
@@ -61,11 +36,12 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img 
-                  src="@assets/generated_images/Tropical_beach_paradise_destination_c1d06fff.png" 
-                  alt="Tropical Paradise" 
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                <div className="w-full h-64 bg-gradient-to-br from-blue-400 to-teal-300 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                  <div className="text-center text-white">
+                    <div className="text-4xl mb-2">🏝️</div>
+                    <div className="font-bold">Tropical Paradise</div>
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <h3 className="text-xl font-bold">🏝️ Tropical Paradise</h3>
@@ -76,11 +52,12 @@ export default function Home() {
             
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img 
-                  src="@assets/generated_images/Golden_hour_city_skyline_5f028db5.png" 
-                  alt="Urban Adventure" 
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                <div className="w-full h-64 bg-gradient-to-br from-purple-400 to-pink-300 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                  <div className="text-center text-white">
+                    <div className="text-4xl mb-2">🏙️</div>
+                    <div className="font-bold">Urban Adventure</div>
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <h3 className="text-xl font-bold">🏙️ Urban Adventure</h3>
@@ -91,11 +68,12 @@ export default function Home() {
             
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-2xl shadow-lg">
-                <img 
-                  src="@assets/generated_images/Cozy_mountain_cabin_retreat_39dbb833.png" 
-                  alt="Mountain Retreat" 
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
+                <div className="w-full h-64 bg-gradient-to-br from-green-400 to-emerald-300 flex items-center justify-center rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                  <div className="text-center text-white">
+                    <div className="text-4xl mb-2">⛰️</div>
+                    <div className="font-bold">Mountain Retreat</div>
+                  </div>
+                </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
                   <h3 className="text-xl font-bold">⛰️ Mountain Retreat</h3>
@@ -140,14 +118,14 @@ export default function Home() {
                 Intelligent travel planning powered by AI 🤖 and real-time data 📊. Create unforgettable journeys tailored to your unique preferences ✨.
               </p>
               <div className="flex space-x-4">
-                <a href="#" className="text-background/70 hover:text-primary transition-colors text-xl">
-                  🐦
+                <a href="#" className="text-background/70 hover:text-primary transition-colors">
+                  <i className="fab fa-twitter text-xl"></i>
                 </a>
-                <a href="#" className="text-background/70 hover:text-primary transition-colors text-xl">
-                  📷
+                <a href="#" className="text-background/70 hover:text-primary transition-colors">
+                  <i className="fab fa-instagram text-xl"></i>
                 </a>
-                <a href="#" className="text-background/70 hover:text-primary transition-colors text-xl">
-                  📘
+                <a href="#" className="text-background/70 hover:text-primary transition-colors">
+                  <i className="fab fa-facebook text-xl"></i>
                 </a>
               </div>
             </div>
@@ -155,20 +133,20 @@ export default function Home() {
             <div>
               <h6 className="font-semibold mb-4">🚀 Product</h6>
               <div className="space-y-2 text-background/70">
-                <a href="#how-it-works" className="block hover:text-primary transition-colors">How it works</a>
-                <a href="/examples" className="block hover:text-primary transition-colors">Examples</a>
-                <a href="/pricing" className="block hover:text-primary transition-colors">Pricing</a>
-                <a href="#api" className="block hover:text-primary transition-colors">API</a>
+                <a href="#" className="block hover:text-primary transition-colors">How it works</a>
+                <a href="#" className="block hover:text-primary transition-colors">Examples</a>
+                <a href="#" className="block hover:text-primary transition-colors">Pricing</a>
+                <a href="#" className="block hover:text-primary transition-colors">API</a>
               </div>
             </div>
             
             <div>
               <h6 className="font-semibold mb-4">💬 Support</h6>
               <div className="space-y-2 text-background/70">
-                <a href="#help" className="block hover:text-primary transition-colors">Help Center</a>
-                <a href="#contact" className="block hover:text-primary transition-colors">Contact Us</a>
-                <a href="#privacy" className="block hover:text-primary transition-colors">Privacy Policy</a>
-                <a href="#terms" className="block hover:text-primary transition-colors">Terms of Service</a>
+                <a href="#" className="block hover:text-primary transition-colors">Help Center</a>
+                <a href="#" className="block hover:text-primary transition-colors">Contact Us</a>
+                <a href="#" className="block hover:text-primary transition-colors">Privacy Policy</a>
+                <a href="#" className="block hover:text-primary transition-colors">Terms of Service</a>
               </div>
             </div>
           </div>

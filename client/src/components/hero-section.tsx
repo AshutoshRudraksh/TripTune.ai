@@ -16,15 +16,16 @@ export default function HeroSection() {
               ✈️ TravelAI
             </div>
             <div className="hidden md:flex space-x-6 text-white">
-              <a href="#" className="hover:text-secondary transition-colors">How it works</a>
-              <a href="#" className="hover:text-secondary transition-colors">Examples</a>
-              <a href="#" className="hover:text-secondary transition-colors">Pricing</a>
-              <button 
+              <a href="#how-it-works" className="hover:text-secondary transition-colors">How it works</a>
+              <a href="/examples" className="hover:text-secondary transition-colors">Examples</a>
+              <a href="/pricing" className="hover:text-secondary transition-colors">Pricing</a>
+              <a 
+                href="/api/login"
                 className="bg-white text-primary px-6 py-2 rounded-full font-medium hover:bg-secondary hover:text-secondary-foreground transition-all"
                 data-testid="button-signin"
               >
                 Sign In
-              </button>
+              </a>
             </div>
           </div>
         </nav>
